@@ -1,11 +1,28 @@
-class Student (val id:String,
-               val name:String,
-               val course:String,
-               val mark: Double) {
-    override fun toString(): String {
-        return "Name: $name, Course: $course, Mark: $mark"
+class Student(
+    val id: String,
+    val name: String,
+    val course: String,
+    initialMark: Double
+) {
+    var mark: Double = 0.0
+        set(value) {
+            if (value in 0.0..100.0) {
+                field = value
+            } else {
+                println("Error: Invalid mark ($value). Must be 0..100.")
+                // no cambia el field
+            }
+        }
+
+    init {
+        // 👇 Esto SÍ usa el setter y por tanto valida initialMark
+        this.mark = initialMark
     }
+
+    override fun toString() = "Name: $name, Course: $course, Mark: $mark"
 }
+
+
 fun main() {
     while (true) {
         print("Enter student name (or type 'quit' to stop): ")
