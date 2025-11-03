@@ -1,8 +1,7 @@
 class Student(
     val id: String,
     val name: String,
-    val course: String,
-    initialMark: Double
+    val course: String
 ) {
     var mark: Double = 0.0
         set(value) {
@@ -13,11 +12,6 @@ class Student(
                 // no cambia el field
             }
         }
-
-    init {
-        // 👇 Esto SÍ usa el setter y por tanto valida initialMark
-        this.mark = initialMark
-    }
 
     fun getGrade(): String {
         return when (mark) {

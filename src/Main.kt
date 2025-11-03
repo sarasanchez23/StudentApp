@@ -21,7 +21,8 @@ fun main() {
         val mark = markInput.toDoubleOrNull() ?: 0.0  // convierte a número o 0.0 si falla
 
         // Creamos un objeto Student
-        val student = Student(id, name, course, mark)
+        val student = Student(id, name, course)
+        student.mark = mark
 
         // Mostramos los detalles
         println("Student created: $student, Grade: ${student.getGrade()}\n")
