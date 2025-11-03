@@ -16,13 +16,14 @@ fun main() {
         print("Enter course: ")
         val course = readLine()!!.trim()
 
+        // Creamos un objeto Student sin el mark
+        val student = Student(id, name, course)
+
+        //ahora pedimos el mark y usamos el setter
         print("Enter mark: ")
         val markInput = readLine()!!.trim()
-        val mark = markInput.toDoubleOrNull() ?: 0.0  // convierte a número o 0.0 si falla
-
-        // Creamos un objeto Student
-        val student = Student(id, name, course)
-        student.mark = mark
+        val markValue = markInput.toDoubleOrNull() ?: 0.0
+        student.mark = markValue  // usa el setter que valida
 
         // Mostramos los detalles
         println("Student created: $student, Grade: ${student.getGrade()}\n")
