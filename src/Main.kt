@@ -1,28 +1,3 @@
-class Student(
-    val id: String,
-    val name: String,
-    val course: String,
-    initialMark: Double
-) {
-    var mark: Double = 0.0
-        set(value) {
-            if (value in 0.0..100.0) {
-                field = value
-            } else {
-                println("Error: Invalid mark ($value). Must be 0..100.")
-                // no cambia el field
-            }
-        }
-
-    init {
-        // 👇 Esto SÍ usa el setter y por tanto valida initialMark
-        this.mark = initialMark
-    }
-
-    override fun toString() = "Name: $name, Course: $course, Mark: $mark"
-}
-
-
 fun main() {
     while (true) {
         print("Enter student name (or type 'quit' to stop): ")
@@ -49,7 +24,7 @@ fun main() {
         val student = Student(id, name, course, mark)
 
         // Mostramos los detalles
-        println("Student created: $student")
+        println("Student created: $student, Grade: ${student.getGrade()}\n")
         println("----------------------------------")
     }
 }
