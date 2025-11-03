@@ -28,6 +28,10 @@ class Student(
             else -> "Fail"
         }
     }
+    //Metodo exercise 7
+    fun didPass(): Boolean {
+        return mark >= 40.0
+    }
 
     override fun toString() = "Name: $name, Course: $course, Mark: $mark"
 }

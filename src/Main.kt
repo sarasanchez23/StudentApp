@@ -25,6 +25,7 @@ fun main() {
 
         // Mostramos los detalles
         println("Student created: $student, Grade: ${student.getGrade()}\n")
+        println("Passed: ${student.didPass()}")
         println("----------------------------------")
     }
 }
